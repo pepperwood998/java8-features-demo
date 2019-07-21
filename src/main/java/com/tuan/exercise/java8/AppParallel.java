@@ -1,4 +1,4 @@
-package com.tuan.exercise.java8.stream;
+package com.tuan.exercise.java8;
 
 import java.util.ArrayList;
 import java.util.List;
