@@ -1,6 +1,7 @@
 package com.tuan.exercise.java8.util;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -57,11 +58,11 @@ public class Statistic {
         }
 
         public static List<Student> getSkilledByAge(List<Student> studentList, int minAcceptableVal,
-                LocalDateTime minDob) {
+                int minAge) {
             return studentList.parallelStream()
                     .filter(
-                            student -> student.getSkillPoint() >= minAcceptableVal && 
-                            student.getDob().compareTo(minDob) > 0)
+                            student -> student.getSkillPoint() >= minAcceptableVal
+                                    && Period.between(student.getDob(), LocalDate.now()).getYears() > minAge)
                     .collect(Collectors.toList());
         }
     }

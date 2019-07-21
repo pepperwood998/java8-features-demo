@@ -1,17 +1,17 @@
 package com.tuan.exercise.java8.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Random;
 
 public class Student {
 
     private String firstName;
     private String lastName;
-    private LocalDateTime dob;
+    private LocalDate dob;
     private Mentor mentor;
     private int skillPoint;
 
-    public Student(String firstName, String lastName, LocalDateTime dob, Mentor mentor) {
+    public Student(String firstName, String lastName, LocalDate dob, Mentor mentor) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
@@ -35,11 +35,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public LocalDateTime getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(LocalDateTime dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 

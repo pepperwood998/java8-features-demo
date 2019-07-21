@@ -1,6 +1,5 @@
 package com.tuan.exercise.java8;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -21,15 +20,15 @@ public class App {
     public static void main(String[] args) {
 
         List<Student> studentList = new ArrayList<>(15);
-        studentList.add(new Student("Tuan", "Dao", DateTime.getRandomDateTime(), mentorOne));
-        studentList.add(new Student("Natasha", "Romanoff", DateTime.getRandomDateTime(), mentorOne));
-        studentList.add(new Student("Tony", "Stark", DateTime.getRandomDateTime(), mentorTwo));
-        studentList.add(new Student("Bruce", "Banner", DateTime.getRandomDateTime(), mentorThree));
-        studentList.add(new Student("Steve", "Roger", DateTime.getRandomDateTime(), mentorTwo));
-        studentList.add(new Student("Thor", "Odinson", DateTime.getRandomDateTime(), mentorOne));
-        studentList.add(new Student("Stephen", "Strange", DateTime.getRandomDateTime(), mentorOne));
-        studentList.add(new Student("Wanda", "Maximoff", DateTime.getRandomDateTime(), mentorThree));
-        studentList.add(new Student("James", "Rhodes", DateTime.getRandomDateTime(), mentorThree));
+        studentList.add(new Student("Tuan", "Dao", DateTime.getRandomDate(), mentorOne));
+        studentList.add(new Student("Natasha", "Romanoff", DateTime.getRandomDate(), mentorOne));
+        studentList.add(new Student("Tony", "Stark", DateTime.getRandomDate(), mentorTwo));
+        studentList.add(new Student("Bruce", "Banner", DateTime.getRandomDate(), mentorThree));
+        studentList.add(new Student("Steve", "Roger", DateTime.getRandomDate(), mentorTwo));
+        studentList.add(new Student("Thor", "Odinson", DateTime.getRandomDate(), mentorOne));
+        studentList.add(new Student("Stephen", "Strange", DateTime.getRandomDate(), mentorOne));
+        studentList.add(new Student("Wanda", "Maximoff", DateTime.getRandomDate(), mentorThree));
+        studentList.add(new Student("James", "Rhodes", DateTime.getRandomDate(), mentorThree));
 
         // Group students to their corresponding mentor
         Log.info("Map of mentors and their corresponding students");
@@ -54,8 +53,8 @@ public class App {
         
         Log.lineSep();
 
-        LocalDateTime testTime = DateTime.getRandomDateTime();
-        Log.info(String.format("List of student with skill >= %d born after %s", minSkillVal, testTime));
-        Printer.printList(Statistic.Parallel.getSkilledByAge(studentList, minSkillVal, testTime));
+        int minAge = 20;
+        Log.info(String.format("List of student with skill >= %d and older than %s", minSkillVal, minAge));
+        Printer.printList(Statistic.Parallel.getSkilledByAge(studentList, minSkillVal, minAge));
     }
 }

@@ -24,7 +24,7 @@ public class AppParallel {
         Log.info("Preparing Data");
         for (int i = 0; i < studentNum; i++) {
             studentList.add(
-                    new Student("NONE", "NONE", DateTime.getRandomDateTime(), mentors[rnd.nextInt(mentors.length)]));
+                    new Student("NONE", "NONE", DateTime.getRandomDate(), mentors[rnd.nextInt(mentors.length)]));
         }
         Log.info("Finished Preparing Data");
 
